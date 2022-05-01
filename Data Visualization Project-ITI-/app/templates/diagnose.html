@@ -1,0 +1,116 @@
+{% extends "template.html" %}
+
+{% set active_page = "diagnose" %}
+
+{% block content %}
+<div class="container shadow rounded fadeIn p-5 my-5 bg-white" id="content">
+    <h2>Heart Status Prediction </h2>
+    <br>
+    <div class="container">
+        <form action="" id="diagnosis-form" method="post">
+            {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="form-check mb-4 col-md-2">
+                    {{ form.age.label(class_="visually-hidden") }}
+                    {{ form.age(class_="form-control", placeholder="Age") }}
+                </div>
+                <div class="form-check mb-4 col-md-1"></div>
+                {% for subfield in form.sex %}
+                <div class="form-check mb-4 col-lg-1">
+                    {{ subfield(class_="form-check-input") }}
+                    {{ subfield.label(class_="form-check-label") }}
+                </div>
+                {% endfor %}
+
+                {% if form.sex.errors %}
+                <ul class="errors">
+                    {% for error in form.sex.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="form-check mb-4 col-md-4"></div>
+            </div>
+            <p>Please select if you have any of the following Heart conditions:</p><br>
+            <div class="row">
+                <div class="form-check mb-4 col-md-3">
+                    {{ form.fbs(class_="form-check-input") }}
+                    {{ form.fbs.label(class_="form-check-label") }}
+                </div>
+                <div class="form-check mb-4 col-md-3">
+                    {{ form.restecg(class_="form-check-input") }}
+                    {{ form.restecg.label(class_="form-check-label") }}
+                </div>
+                <div class="form-check mb-4 col-md-3">
+                    {{ form.exang(class_="form-check-input") }}
+                    {{ form.exang.label(class_="form-check-label") }}
+                </div>
+
+            </div>
+         
+            </div>
+            <div class="row">
+                <div class="form-check mb-4 col-md-2">
+                    {{ form.oldpeak.label(class_="visually-hidden") }}
+                    {{ form.oldpeak(class_="form-control", placeholder="oldpeak") }}
+                </div>
+                <div class="form-check mb-4 col-md-2">
+                    {{ form.slope.label(class_="visually-hidden") }}
+                    {{ form.slope(class_="form-control", placeholder="slope") }}
+    
+                </div>
+                <div class="form-check mb-4 col-md-2">
+                    {{ form.ca.label(class_="visually-hidden") }}
+                    {{ form.ca(class_="form-control", placeholder="ca") }}
+            </div>
+            <div class="form-check mb-4 col-md-2">
+                {{ form.cp.label(class_="visually-hidden") }}
+                {{ form.cp(class_="form-control", placeholder="cp") }}
+
+        </div>
+        <div class="form-check mb-4 col-md-2">
+            {{ form.trestbps.label(class_="visually-hidden") }}
+            {{ form.trestbps(class_="form-control", placeholder="trestbps") }}
+
+    </div>
+    <div class="form-check mb-4 col-md-2">
+        {{ form.chol.label(class_="visually-hidden") }}
+        {{ form.chol(class_="form-control", placeholder="chol") }}
+
+</div>
+<div class="form-check mb-4 col-md-2">
+    {{ form.thalach.label(class_="visually-hidden") }}
+    {{ form.thalach(class_="form-control", placeholder="thalach") }}
+
+</div>
+
+        
+        
+
+            <div class="row">
+                <div class="form-check mb-4 col-md-2">
+                    {{ form.thal.label(class_="visually-hidden") }}
+                    {{ form.thal(class_="form-control", placeholder="thal") }}
+                </div>
+                
+            </div>
+        </div>
+            <div class="row">
+                <div class="col">
+                </div>
+                <div class="my-4 col-12">
+                    {{ form.submit(class_="btn-primary form-control") }}
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </form>
+
+        <br>
+
+        <div class="alert alert-primary shadow" id="diagnosis-result" role="alert"></div>
+
+    </div>
+</div>
+
+{% endblock %}

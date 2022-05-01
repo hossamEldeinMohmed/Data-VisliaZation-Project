@@ -1,0 +1,157 @@
+body {
+  background-color: rgba(0, 0, 0, .03);
+}
+
+#homepage {
+  background-color: rgba(0, 0, 0, .0);
+  color: #000000 !important;
+
+}
+
+#homepagebackground {
+  background-color: rgba(0, 0, 0, .03);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.fa {
+
+  color: #b15454;
+}
+
+.text-muted {
+  color: #000000 !important;
+}
+
+h3.display-3 {
+  color: #000000 !important;
+}
+
+
+a.navbar-brand {
+  color: #000000 !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #homepagebackground {
+    background-size: 200% auto;
+  }
+}
+
+#navbar {
+  background-color: #fdf7f7;
+  color: #000000 !important;
+}
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+#content {
+  max-width: 1080px;
+}
+
+.scrollme {
+  overflow-x: auto;
+}
+
+/* hide result div initially, required for fade effects */
+#diagnosis-result {
+  display: none;
+}
+
+/* page load animations */
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp.first {
+  -webkit-animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+.fadeInUp.second {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1s;
+  -moz-animation: fadeIn ease-in 1s;
+  animation: fadeIn ease-in 1s;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1ss;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}

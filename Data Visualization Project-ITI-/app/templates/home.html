@@ -1,0 +1,56 @@
+{% extends "hometemplate.html" %}
+{% set active_page = "home" %}
+{% block content %}
+    <div class="jumbotron text-white bg-transparent m-4"
+         id="jumbotron"
+         style="background-color:#F45632;
+                background-size: auto 100%;
+                background-repeat: no-repeat;">
+        <div class="container fadeIn bg-transparent">
+            <h3 class="display-3" style="color#000000">Machine Learning Heart Prediction</h3>
+        </div>
+    </div>
+</div>
+<div class="album py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 fadeInUp">
+                <div class="card mb-4 shadow">
+                    <div class="d-flex justify-content-center text-muted mt-4 icons">
+                        <span class="fa fa-heartbeat fa-5x"></span>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3>Make a prediction</h3>
+                        <p>
+                            Make a prediction using a trained machine learning model.
+                        </p>
+                        <p>
+                            <a class="btn btn-secondary"
+                               href="{{ url_for('diagnose') }}"
+                               role="button">Make a prediction &raquo;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 fadeInUp first">
+                <div class="card mb-4 shadow">
+                    <div class="d-flex justify-content-center text-muted mt-4  icons">
+                        <span class="fa fa-line-chart fa-5x"></span>
+                    </div>
+                    <div class="card-body text-center">
+                        <h3>Data Visualizations</h3>
+                        <p>
+                            Use the DashPy to visualize the data and reletionships  .
+                        </p>
+                        <p>
+                            <a class="btn btn-secondary"
+                               href="http://192.168.1.229:8050/"
+                               role="button">View Visualizations &raquo;</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
